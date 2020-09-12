@@ -1,0 +1,932 @@
+body{
+    background-color:hsl(229, 25%, 31%);
+      margin:0;
+       font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+ 
+
+}
+
+
+.navBar{
+ width: 90%;
+  height: 100px;
+  border:2px solid hsl(217, 16%, 45%);
+ display: flex;
+ justify-content: space-between;
+ margin:20px 5% 0 5%;
+ border-radius: 10px;
+ 
+}
+
+.logo {
+
+   padding:10px 5px 5px 15px;
+   max-width:30%;
+   height: 20%;
+}
+
+.logo img {
+	width:80px;
+	
+}
+
+.score {
+	margin:10px 3% 10px 0%;
+	color:hsl(229, 64%, 46%);
+     background-image: linear-gradient(hsl(255, 253%, 254%), hsl(244, 244%, 246%));
+     width:85px;
+     text-align: center;
+     padding-top:4px;
+     border-radius: 5px;
+     border: 2px  solid #1E3454 ;
+     font-size: 15px;
+   font-weight: bold;
+   height: 80px;
+
+}
+
+.theScore {
+	display: block;
+	font-size: 45px;
+	border-style: none;
+	color :hsl(229, 25%, 31%);
+  background-color:transparent;
+ text-align: center;
+ width:80px;
+ 
+}
+
+/* the part of the  main game*/
+
+.all{
+ background-image: url(images/bg-pentagon.png);
+ background-repeat: no-repeat;
+ height: 400px;
+ background-position: center;
+ background-size: 200px 200px;
+}
+
+/*scissors*/
+.sci{
+
+	display:flex;
+	justify-content: center;
+	padding-top:50px;
+
+}
+
+.scissors{
+	width: 90px;
+  height: 90px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+}
+
+.empty{
+ background:green;
+  
+}
+
+
+
+    /*spock and paper*/
+.spo-pap{
+	
+	display:flex;
+	justify-content: center;
+	
+
+}
+
+.spock{
+	margin-right: 100px;
+	width: 90px;
+  height: 90px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+ cursor: pointer;
+}
+
+
+
+.paper{
+	width: 90px;
+  height: 90px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+}
+
+
+ /*lizard and rock*/
+.liz-ro{
+	display:flex;
+	justify-content: center;
+	margin-top:10px;
+
+}
+
+
+.lizard{
+	margin-right: 60px;
+  width: 90px;
+  height: 90px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+}
+
+.rock{
+	width: 90px;
+  height: 90px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+
+}
+
+
+.hid{
+  display:none;
+}
+
+.emptyMother{
+ 
+    display:flex;
+  justify-content: center;
+    padding-top:75px;
+   margin-left:60%;
+   position: absolute;
+    margin-top: 10px;
+}
+
+.show{
+   width: 90px;
+  height: 90px;
+  background-color:#1A2946;
+  border-radius: 100px;
+  animation: csAnimation 0s ease-in 1s forwards;
+}
+
+@keyframes csAnimation {
+    to {
+      
+        visibility:hidden;
+    }
+  }
+
+.newSci{
+   
+    display:flex;
+    justify-content: center;
+    padding-top:60px;
+    padding-right: 168px;
+}
+
+.newScissors{
+
+    width: 130px;
+  height: 130px;
+  pointer-events: none;
+ 
+}
+
+.back{
+  background-image:initial;
+}
+
+.newSpo-pap{
+    
+    display:flex;
+    justify-content: center;
+    padding-top:60px;
+    padding-right: 168px;
+
+}
+
+.newSpock{
+
+    pointer-events: none;
+    width: 130px;
+  height: 130px;
+  margin-right:-3px;
+}
+
+
+.newPaper{
+    width: 130px;
+  height: 130px;
+ pointer-events: none;
+}
+
+.newLiz-ro{
+     display:flex;
+    justify-content: center;
+    padding-top:60px;
+    padding-right: 168px;
+}
+
+
+.newLizard{
+
+  width: 130px;
+  height: 130px;
+ pointer-events: none;
+ margin-right:-3px;
+}
+
+.newRock{
+  
+   width: 130px;
+  height: 130px;
+ pointer-events: none;
+}
+
+
+#myEmptyMother{
+
+}
+
+
+.myScissors1{
+display:none;
+width: 125px;
+  height: 125px;
+  margin-left:170px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+  
+}
+
+.see{
+  display:block;
+}
+
+.sci1{
+    display:flex;
+  justify-content: center;
+  margin-top:-330px;
+padding-bottom: 5px;
+ pointer-events: none;
+  position:relative;
+  z-index:1000;
+  
+}
+
+
+.spock1{
+  display:none;
+width: 125px;
+  height: 125px;
+  margin-left:170px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+.spo1{
+display:flex;
+  justify-content: center;
+  margin-top:-10px;
+padding-bottom: 5px;
+ pointer-events: none;
+  position:relative;
+  z-index:1000;
+}
+
+.see2{
+  display:block;
+}
+
+.paper1{
+ display:none;
+width: 125px;
+  height: 125px;
+  margin-left:170px;
+   border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+.pap1{
+  display:flex;
+  justify-content: center;
+  margin-top:-10px;
+padding-bottom: 5px;
+ pointer-events: none;
+  position:relative;
+  z-index:1000;
+}
+
+.see3{
+  display:block;
+}
+
+.lizard1{
+display:none;
+width: 125px;
+  height: 125px;
+  margin-left:170px;
+  border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+.liz1{
+ display:flex;
+  justify-content: center;
+  margin-top:-5px;
+padding-bottom: 5px;
+ pointer-events: none;
+  position:relative;
+  z-index:1000;
+}
+ .see4{
+  display:block;
+
+ }
+.rock1{
+display: none;
+width: 125px;
+  height: 125px;
+  margin-left:170px;
+ border: double 1em transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+
+.roc1{
+display:flex;
+  justify-content: center;
+  margin-top:5px;
+padding-bottom: 0px;
+ pointer-events: none;
+  position:relative;
+  z-index:1000;
+
+}
+
+.see5{
+  display:block;
+}
+
+.you{
+
+  display:flex;
+  justify-content: center;
+
+  margin-top:20px;
+display: none;
+}
+
+.you div {
+color:hsl(251, 255%, 255%);
+font-size:4vw;
+padding: 0 5px 0 30px; 
+
+}
+
+
+.youShow{
+  display:block;
+  display:flex;
+}
+
+.deg{
+  display:flex;
+  justify-content: center;
+  font-weight: bold;
+  color:hsl(251, 255%, 255%);
+  font-size: 40px;
+  display:none;
+  margin-top:50px;
+}
+
+.degShow{
+  display:block;
+   display:flex;
+}
+
+.play1{
+  display:flex;
+  justify-content: center;
+  margin-top:20px;
+
+}
+.play{
+  width:200px;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(217, 16%, 45%);
+  background-color: hsl(251, 255%, 255%);
+  /*display: none;*/
+  height:50px;
+  border-radius: 10px;
+display:none;
+cursor: pointer;
+}
+
+.playShow{
+  display: block;
+  display: flex;
+}
+
+.ruleflex{
+display:flex;
+justify-content: center;
+position: absolute;
+top:94.5%;
+width: 100%;
+height: auto;
+}
+
+
+
+
+.rule1{
+width:150px;
+height: 30px;
+border:2px solid hsl(217, 16%, 45%) ;
+border-radius: 10px;
+color:hsl(251, 255%, 255%);
+font-size: 20px;
+text-align: center;
+padding-top:2px;
+cursor: pointer;
+
+}
+
+
+
+
+
+.pic{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-top:-210px;
+}
+.pic ul{
+  list-style: none;
+  background: red;
+ width:100%;
+  height: 100%;
+
+}
+
+.pic li{
+  /*padding: 20px 0 50px 0;*/
+
+}
+
+.pic li p {
+  padding:75px 0 20px 0 ;
+  background: green;
+  text-align:center;
+}
+
+.pic li img {
+  padding-bottom: 25%;
+  display: flex;
+  background: blue;
+  width: 100%;
+  height: auto;
+}
+
+
+.myRules{
+ position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 5000;
+  background-color: white;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 10px;
+  display:none;
+}
+
+.myRules ul{
+  list-style: none;
+}
+
+.myRules li{
+  text-align: center;
+  padding:50px 0 18px 0 ;
+ 
+}
+
+.rulesLi{
+  font-weight: bold;
+
+}
+
+
+
+.myRulesShow1{
+   display:block;
+}
+.crosspointer{
+  cursor: pointer;
+}
+
+.winnerCir{
+  box-shadow: 0 0 0 15px hsl(221, 221%, 221%, 6%),
+0 0 0 30px  hsl(221, 221%, 221%, 5%),
+0 0 0 50px hsl(221, 221%, 221%, 4%); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:698px){
+
+
+
+.navBar{
+  width: 40%;
+  height: 130px;
+ margin:20px 30% 0 30%;
+ 
+}
+
+.logo {
+
+   padding:17px 5px 5px 15px;
+   max-width:30%;
+   height: 20%;
+}
+
+.logo img {
+	width:100px;
+	
+}
+
+.score {
+	margin:15px 3% 10px 0%;
+	width:130px;
+   height: 100px;
+}
+
+
+.theScore {
+  
+ width:90px;
+ margin-left:20px;
+ 
+}
+
+.myScissors1{
+width: 240px;
+  height: 240px;
+  margin-left:470px;
+   border-radius: 200px;
+}
+
+.sci1{
+  
+  margin-top:-270px;
+padding-bottom: 5px;  
+}
+
+.newSci{
+    padding-top:120px;
+    padding-right: 168px;
+
+}
+
+.newScissors{
+
+    width: 250px;
+  height: 250px;
+ margin-right: 300px;
+ border-radius: 200px;
+}
+
+
+
+.spock1{
+  
+width: 250px;
+  height: 250px;
+  margin-left:470px;
+  border-radius: 200px;
+}
+
+
+
+.paper1{
+
+width: 250px;
+  height: 250px;
+  margin-left:470px;
+  border-radius: 200px;
+}
+
+
+
+.lizard1{
+width: 250px;
+  height: 250px;
+  margin-left:470px;
+border-radius: 200px;
+}
+
+
+
+.rock1{
+
+width: 250px;
+  height: 250px;
+  margin-left:470px;
+border-radius: 200px;
+}
+
+.newSpo-pap{
+    
+    display:flex;
+    justify-content: center;
+    padding-top:129px;
+    padding-right: 168px;
+}
+
+.newSpock{
+
+    width: 250px;
+  height: 250px;
+ margin-right: 300px;
+ border-radius: 200px;
+}
+
+
+.newPaper{
+   width: 250px;
+  height: 250px;
+ margin-right: 300px;
+ border-radius: 200px;
+}
+
+
+.newLiz-ro{
+    
+    padding-top:131px;
+    padding-right: 168px;
+}
+
+.newLizard{
+width: 250px;
+  height: 250px;
+ margin-right: 300px;
+ border-radius: 200px;
+}
+
+.newRock{
+  width: 250px;
+  height: 250px;
+ margin-right: 300px;
+ border-radius: 200px;
+}
+
+.emptyMother{
+ 
+    
+    padding-top:140px;
+   margin-left:57%;
+    margin-top: 10px;
+}
+
+
+.show{
+   width: 200px;
+  height: 200px;
+  
+}
+
+.you{
+
+  display:flex;
+  justify-content: center;
+ 
+  margin-top:-330px;
+display: none;
+
+}
+
+.you div {
+color:hsl(251, 255%, 255%);
+font-size:2vw;
+padding: 0 120px 0 160px; 
+
+}
+
+
+.youShow{
+  display:block;
+  display:flex;
+}
+
+
+
+.play1{
+margin-left: 5px;
+}
+
+
+
+.ruleflex{
+display:flex;
+justify-content: flex-end; 
+position: absolute;
+top:94.5%;
+width: 100%;
+height: auto;
+padding-right:30px;
+}
+
+
+
+.myRules{
+ position: absolute;
+  left: 30%;
+  right:30%; 
+  top: 20%;
+  z-index: 5000;
+  background-color: white;
+  width:40%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  border-radius: 10px;
+  display:none;
+   box-shadow: 50px 60px 250px 250px hsl(233, 26%, 24%);
+}
+
+.myRules ul{
+  list-style: none;
+}
+
+.myRules li{
+  text-align: center;
+  padding:20px 0 18px 0 ;
+ 
+}
+
+.rulesLi{
+  font-weight: bold;
+ position: absolute;
+ left: 40px;
+
+}
+
+
+
+.myRulesShow1{
+   display:block;
+}
+.crosspointer{
+  cursor: pointer;
+  /*margin: :-100px 0px 0 0 ;*/
+  position: absolute;
+  bottom: 360px;
+  right: 40px;
+}
+
+
+.myRules ul li img {
+  width:250px;
+  height: auto;
+  margin-top:50px;
+}
+
+.winnerCir{
+  box-shadow: 0 0 0 30px hsl(221, 221%, 221%, 6%),
+0 0 0 70px  hsl(221, 221%, 221%, 5%),
+0 0 0 100px hsl(221, 221%, 221%, 4%); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
